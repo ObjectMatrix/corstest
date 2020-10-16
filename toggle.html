@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+        <title>ESP32</title>
+        <link rel="stylesheet" href="">
+        <!--[if lt IE 9]>
+          <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        </head>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+        <body>
+            <div>
+                <p class="greeting-id">The ID is </p>
+                <p class="greeting-content">The content is </p>
+            </div>
+        </body>
+
+        <script>
+            $(document).ready(function() {    
+                    $.ajax({
+                        url: 'https://qf87lx85a7.execute-api.us-east-1.amazonaws.com/test/esp32',
+                        crossDomain: true,
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type':'application/text',
+                        beforeSend: function (request) {  
+                            request.setRequestHeader('Access-Control-Allow-Credentials', 'true');              
+                            request.setRequestHeader('Access-Control-Allow-Origin', '*');
+                            request.setRequestHeader('Access-Control-Allow-Methods', 'GET, PUT, POST');
+                            
+                        },
+                        headers: {
+                            'Access-Control-Allow-Origin':'*',
+                            'message':'0',
+                            'Content-Type': 'application/json',
+                            // 'Content-Length': '29',
+                            // 'Connection': 'keep-alive',
+                            // 'x-amzn-RequestId': '34c9550f-1c80-438a-ac3e-32135feb7ab1',
+                            // 'x-amz-apigw-id': 'UhDXwF_PoAMFqLA=',
+                            // 'X-Amzn-Trace-Id': 'Root=1-5f89e5cb-6549fae41bcfd47009e5eaf6;Sampled=0',
+
+                        },
+                        type: 'POST',
+                        success: function(response){
+                            console.log(response);
+                        }
+                    })
+                });
+
+                // var apiUrl = 'https://qf87lx85a7.execute-api.us-east-1.amazonaws.com/test/esp32';
+                //     fetch(apiUrl,
+                //     {
+                //         //mode:'cors',
+                //         'Access-Control-Allow-Origin': '*',
+                //         'Content-Type':'application/text',
+                //         'Access-Control-Allow-Credentials': 'true'
+                //     }).then(response => {
+                //         console.log(response.json());
+                //     return response.json();
+                //     }).then(data => {
+                //     console.log(data);
+                //     }).catch(err => {
+                //         console.log(err);
+                //     });
+
+        </script>
+</html>
