@@ -14,9 +14,10 @@
   </head>
 
   <body>
-  <h1>Fetch IoT</h1>
+  <h1>ESP32</h1>
   </body>
   <script>
+    function toggle(val) {
     let hydra = new Headers()
     hydra.append('Content-Type', 'application/json');
     hydra.append('Access-Control-Allow-Origin', '*');
@@ -26,7 +27,7 @@
       cache: 'default', 
       method: 'POST',
       headers: hydra,
-      message: '1',
+      message: val,
     }
     let myRequest = new Request('https://qf87lx85a7.execute-api.us-east-1.amazonaws.com/test/esp32', init);
 
@@ -48,5 +49,6 @@
         document.createTextNode('Error: ' + error.message)
       );
     });
+  }
   </script>
 </html>
