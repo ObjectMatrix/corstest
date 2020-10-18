@@ -90,6 +90,14 @@
     /* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
     outline: 0;
   }
+.espdesc {
+  font-size: .3em;
+  padding: 0.15em;
+  text-align: center;
+}
+a:link {
+  text-decoration: none;
+}
   </style>
     <title>IoT: ESP32/ESP8266</title>
 
@@ -100,9 +108,18 @@
   </head>
 
   <body>
+    <p class="espdesc"> www &rarr; API Gateway &rarr; &lambda; &rarr; IoT (mqtt) &rarr; ESP32/8266; </p>
   <main>
     <input id="bulb" class="l" type="checkbox" onclick="javascript:toggle()">
   </main>
+  <div class="espdesc">
+    <img src="images/esp32.png" />
+  </div>
+
+  <div class="espdesc">
+    <a href="https://www.melexis.com/-/media/images/products/hall-effect-principle.gif?la=en&hash=42AB7A57BB50C6DE3A7927E201BCBE8B"> Demonstrate Hall Effect </a> &rarr;
+    <a href="https://thingspeak.com/channels/1161244">MatLab. ThingSpeak</a>
+  </div>
   </body>
   <script>
     async function toggle(e) {
